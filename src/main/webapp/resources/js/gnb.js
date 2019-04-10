@@ -1,0 +1,2 @@
+jq(document).ready(function() {
+});

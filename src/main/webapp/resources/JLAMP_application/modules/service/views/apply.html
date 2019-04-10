@@ -1,0 +1,38 @@
+{ #header }
+
+    <div class="visual-sub vs-bg-02">
+        <h3>서비스 신청</h3>
+        의료 서비스를 신청해보세요~ 친절하게 안내해 드립니다.
+    </div>
+    <!-- contents -->
+    <div id="contents">
+        <input type="hidden" id="dept_code" name="dept_code" value="{ deptCode }">
+        { ? deptCode == 'G0050001' }
+        <h4 class="title mT50">재활의학과</h4>
+        <div class="box-bg content-header">
+            - 재활의학과 의료 서비스는 아래와 같은 절차로 진행 됩니다.<br>
+            - 신청 이후 서비스 진행 현황을 통해 진행 상태를 확인하실 수 있습니다
+        </div>
+
+        <!-- content -->
+        <div class="box-line mT30">
+            <img src="/image/svc-step-01.png" alt="" style="max-width:100%">
+        </div>
+        <!-- //content -->
+        <ul class="btn-cen mT20">
+            <input type="button" id="btn_service_apply" class="button button-primary button-lg" style="width:200px;padding:0;" value="서비스 신청하기 ">
+            <input type="button" id="btn_go_apply_list" class="button button-point button-lg" style="width:220px;padding:0;" value="서비스 신청 현황 조회 ">
+        </ul>
+        { : }
+        <div class="box ready">
+            <img src="/image/logo.svg">
+            <h3>서비스 <span class="font-p1">“준비중”</span>입니다</h3>
+        </div>
+        <div class="btn-cen mT15">
+            <a href="/" class="button button-primary">홈으로</a>
+        </div>
+        { / }
+    </div>
+    <!-- //contents -->
+
+{ #footer }

@@ -1,0 +1,35 @@
+a{color:#595757;text-decoration:none}
+a:hover,a:focus{color:#595757;text-decoration:none;}
+
+.nav>li>a{position:relative;display:block;padding:10px 10px}
+.nav-tabs{border-bottom:1px solid #ddddde; background:#fff;}
+.nav-tabs>li{float:left; margin-bottom:0; background:#f8f8f8; border-right:1px solid #ddddde;}
+.nav-tabs>li>a{margin-right:0; line-height:1.42857143; border:0; border-radius:0 0 0 0;  color:#9fa0a0; float:left;}
+.nav-tabs>li>a{border-right:0px solid #ddddde;}
+.nav-tabs>li>a:hover{border-color:#f8f8f8 #f8f8f8 #f8f8f8}
+.nav-tabs>li>a:hover{background:#f8f8f8; color:#9fa0a0; border-right:0px solid #ddddde;}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus{color:#fff; background-color:#80b0de; border:0px solid #ddddde; border-bottom-color:transparent; cursor:pointer;}
+.nav-tabs>li.active>a:visited {background-color:#80b0de;}
+.nav-tabs>li>a:visited {background:#f8f8f8;}
+
+.nav-tabs_01{background:#fff;}
+.nav-tabs_01>li{float:left; margin-bottom:0; background:#fff;}
+.nav-tabs_01>li>a{color:#626262; float:left; font-size:16px; font-weight:500; padding:10px 50px 0 0; margin-top:10px;}
+.nav-tabs_01>li>a{border-right:0px solid #ddddde;}
+.nav-tabs_01>li>a:hover{}
+.nav-tabs_01>li>a:hover{background:#fff; color:#d95b43;}
+.nav-tabs_01>li.active>a,.nav-tabs_01>li.active>a:hover,.nav-tabs_01>li.active>a:focus{color:#d95b43; cursor:pointer; background-color:#fff;}
+.nav-tabs_01>li.active>a:visited {background:#fff;}
+.nav-tabs_01>li>a:visited {background:#fff;}
+
+/* 정재호 - 16.10.17 탭 추가 - */
+/* 정재호 - 16.12.21 탭 컬러 변경 - */
+.nav-tabs_02{background:#fff;}
+.nav-tabs_02>li{float:left; margin-bottom:0; background:#f8f8f8; border-right:1px solid #fff;}
+.nav-tabs_02>li>a{margin-right:0; line-height:1.42857143; border:0; border-radius:0 0 0 0;  color:#9fa0a0; float:left; width:140px; text-align:center;}
+.nav-tabs_02>li>a{border-right:0px solid #ddddde;}
+.nav-tabs_02>li>a:hover{border-color:#f8f8f8 #f8f8f8 #f8f8f8}
+.nav-tabs_02>li>a:hover{background:#f8f8f8; color:#9fa0a0; border-right:0px solid #ddddde;}
+.nav-tabs_02>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus{color:#fff; background-color:#f07761; border:0px solid #ddddde; border-bottom-color:transparent; cursor:pointer;}
+.nav-tabs_02>li.active>a:visited {background-color:#f07761;}
+.nav-tabs_02>li>a:visited {background:#f8f8f8;}

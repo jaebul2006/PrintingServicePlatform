@@ -1,0 +1,302 @@
+{ #header }
+
+        <div class="visual-sub vs-bg-02">
+					<h3>서비스 신청</h3>
+       		의료 서비스를 신청해보세요~ 친절하게 안내해 드립니다.
+        </div>
+        <!-- contents -->
+        <div id="contents">
+			<form id="frm_step1" method="post" action="/service/apply/applyStep2">
+				<input type="hidden" id="dept_code" name="dept_code" value="{ deptCode }">
+				<input type="hidden" id="work_type" name="work_type" value="{ workType }">
+				<input type="hidden" id="service_apply_idx" name="service_apply_idx" value="{ serviceApplyIdx }">
+				<h4 class="title mT50">{ deptName }</h4>
+
+				<h5 class="sub_title mT50">- 기본정보</h5>
+
+				<!-- table start -->
+				<table id="basic_info_area" cellspacing="0" border="1" summary="리스트" class="tbl-write mT30">
+					<caption>목록</caption>
+					<colgroup>
+						<col width="200px">
+						<col width="">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><span class="font-p1">*</span> 성명</th>
+							<td><input type="text" id="patient_name" name="patient_name" class="inline" maxlength="20" style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 성별</th>
+							<td><input type="text" id="gender" name="gender" class="inline" maxlength="20" style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 생년월일</th>
+							<td>
+								<input type="text" id="birthday" name="birthday" style="width:165px; height: 34px;">
+							</td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 거주지역</th>
+							<td><input type="text" id="region_code" name="region_code" class="inline" maxlength="20" style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 휴대폰</th>
+							<td colspan="3">
+								<input type="text" id="tel1" name="tel1" style="width:165px;"> -
+								<input type="text" id="tel2" name="tel2" maxlength="4" style="width:165px;"> -
+								<input type="text" id="tel3" name="tel3" maxlength="4" style="width:165px;">
+							</td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 이메일</th>
+							<td colspan="3">
+								<input type="text" id="email" name="email" maxlength="30" style="width:165px;"> @ <input type="text" id="email_address" name="email_address" style="width:165px;">
+								<input type="text" id="sel_email_address" style="width:165px;">
+							</td>
+						</tr>
+						<tr>
+							<th rowspan="3"><span class="font-p1">*</span> 배송지 주소</th>
+							<td colspan="3">
+								<input type="text" id="post" name="post" style="width:165px;background:#ebebe4" readonly >
+								<!--a href="javascript:void(0);" id="check_email" class="button button-line button-form" >중복체크</a-->
+								<input type="button" id="btn_get_post" class="button button-line button-form" value="우편번호 검색 ">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3"><input type="text" id="addr" name="addr" class="inline" maxlength="20" style="width:80%;background:#ebebe4" readonly> </td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<input type="text" id="addr_detail" name="addr_detail"  class="inline" minlength="8"  maxlength="15"  style="width:80%;" placeholder="상세주소">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- //table end-->
+
+				<h5 class="sub_title mT50">- 보조기 정보</h5>
+
+				<!-- table start -->
+				<table  id="prescription_info_area"  cellspacing="0" border="1" summary="리스트" class="tbl-write mT30">
+					<caption>목록</caption>
+					<colgroup>
+						<col width="200px">
+						<col width="">
+					</colgroup>
+					<tbody>
+						<!--tr>
+							<th>서비스코드</th>
+							<td><input type="text" class="inline" maxlength="20" style="width:165px;background:#ebebe4" value="자동생성" readonly> </td>
+						</tr-->
+						<tr>
+							<th><span class="font-p1">*</span> 처방일</th>
+							<td><input type="text" id="prescription_date" name="prescription_date" class="inline" maxlength="20" style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 키</th>
+							<td><input type="text" id="height" name="height" class="inline num_box" maxlength="20"> Cm </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 체중</th>
+							<td><input type="text" id="weight" name="weight" class="inline num_box" maxlength="20"> Kg </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 보조기</th>
+							<td><input type="text" id="assi_type" name="assi_type" class="inline" maxlength="20" style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 좌 / 우</th>
+							<td><input type="text" id="lr_type" name="lr_type" class="inline" maxlength="20" style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 환자유형</th>
+							<td><input type="text" id="patient_type" name="patient_type" class="inline" maxlength="20" style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 디자인 </th>
+							<td id="design_type_area">
+								<!--input type="text" id="design_type" name="design_type" class="inline" maxlength="20" style="width:80%"-->
+								<!--div class="icon design_type_list" >
+									<img src="/image/icon_scanning.png" alt="" onerror="this.src='/image/no_picture.jpg'"><br>
+									<div class="check-wrap inline">
+										<input type="radio" id="design_type_G0300001" name="design_type" value='G0300001' checked>
+										<label for="design_type_G0300001"><span class="radiobtn"></span> </label>
+									</div>
+								</div>
+
+								<div class="icon design_type_list" >
+									<img src="/image/icon_scanning.png" alt="" onerror="this.src='/image/no_picture.jpg'"><br>
+									<div class="check-wrap inline">
+										<input type="radio" id="design_type_G0300001" name="design_type" value='G0300001'>
+										<label for="design_type_G0300001"><span class="radiobtn"></span> </label>
+									</div>
+								</div>
+
+								<div class="icon design_type_list" >
+									<img src="/image/icon_scanning.png" alt="" onerror="this.src='/image/no_picture.jpg'"><br>
+									<div class="check-wrap inline">
+										<input type="radio" id="design_type_G0300001" name="design_type" value='G0300001'>
+										<label for="design_type_G0300001"><span class="radiobtn"></span> </label>
+									</div>
+								</div>
+								<div class="icon design_type_list" >
+									<img src="/image/icon_scanning.png" alt="" onerror="this.src='/image/no_picture.jpg'"><br>
+									<div class="check-wrap inline">
+										<input type="radio" id="design_type_G0300001" name="design_type" value='G0300001'>
+										<label for="design_type_G0300001"><span class="radiobtn"></span> </label>
+									</div>
+								</div>
+
+								<div class="icon design_type_list" >
+									<img src="/image/icon_scanning.png" alt="" onerror="this.src='/image/no_picture.jpg'"><br>
+									<div class="check-wrap inline">
+										<input type="radio" id="design_type_G0300001" name="design_type" value='G0300001'>
+										<label for="design_type_G0300001"><span class="radiobtn"></span> </label>
+									</div>
+								</div!-->
+							</td>
+						</tr>
+						<!--
+						<tr id="assi_sub_type_area" style="display:none;">
+							<th><span class="font-p1">*</span> 교정각</th>
+							<td colspan="3">
+								<div class="check-wrap inline mR20">
+									<input type="radio" id="assi_sub_type_G0140001" name="assi_sub_type" value='G0140001'>
+									<label for="assi_sub_type_G0140001"><span  class="radiobtn"></span> 하지교정각 A</label>
+								</div>
+								<div class="check-wrap inline ">
+									<input type="radio" id="assi_sub_type_G0140002" name="assi_sub_type" value='G0140002'>
+									<label for="assi_sub_type_G0140002"><span class="radiobtn"></span> 하지교정각 B</label>
+								</div>
+							</td>
+						</tr>
+						-->
+						<tr id="lr_type_left_area" style="display:none;">
+							<th><span class="font-p1">*</span> 하지교정각</th>
+							<td colspan="3">
+								<div class="inline mR20">
+									<img src="/image/L_F_S_J_R.jpg"/><br>
+									<input type="text" id="fsjr_left" name="fsjr_left" style="width:214px"/>
+								</div>
+								<div class="inline ">
+									<img src="/image/L_F_T_J_R.jpg"/><br>
+									<input type="text" id="ftjr_left" name="ftjr_left" style="width:214px"/>
+								</div>
+							</td>
+						</tr>
+						<tr id="lr_type_right_area" style="display:none;">
+							<th><span class="font-p1">*</span> 하지교정각</th>
+							<td colspan="3">
+								<div class="inline mR20">
+									<img src="/image/R_F_S_J_R.jpg"/><br>
+									<input type="text" id="fsjr_right" name="fsjr_right" style="width:214px"/>
+								</div>
+								<div class="inline ">
+									<img src="/image/R_F_T_J_R.jpg"/><br>
+									<input type="text" id="ftjr_right" name="ftjr_right" style="width:214px"/>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 두께</th>
+							<td><input type="text" id="thickness_code" name="thickness_code" class="inline"  style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 재료</th>
+							<td><input type="text" id="material_code" name="material_code" class="inline"  style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 색상</th>
+							<td><input type="text" id="color_code" name="color_code" class="inline"  style="width:165px"> </td>
+						</tr>
+						<tr>
+							<th>보조기 가격</th>
+							<td><input type="text" id="assi_price" name="assi_price" class="inline num_box">원</td>
+						</tr>
+						<tr>
+							<th>의료기 NO</th>
+							<td><input type="text" id="equipment_num" name="equipment_num" class="inline"> </td>
+						</tr>
+						<tr>
+							<th><span class="font-p1">*</span> 결재상태</th>
+							<td><input type="text" id="pay_status_code" name="pay_status_code" class="inline"  style="width:165px"> </td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- //table end-->
+
+				<!--div class="box-bg content-header">
+							- { deptName } 서비스 신청을 위해 서비스 업체 및 서비스 항목을 선택해 주십시오. <br>
+							- Scanning, Modeling, Printing 각 단계별로 선택이 가능하며 선택 가능한 서비스는 아래와 같습니다.  <br>
+							▪ Scanning  <br>
+							▪ Scanning > Modeling > Printing  <br>
+							▪ Scanning > Modeling  <br>
+							▪ Modeling  <br>
+							▪ Modeling > Printing  <br>
+							▪ Printing
+				</div-->
+
+				<h5 class="sub_title mT50">-  서비스 정보</h5>
+				<div class="tbl-cell apply-box">
+					<ul>
+						<li>
+							<span class="icon"><img src="/image/icon_scanning.png" alt=""> <span class="subject">SCANNING</span></span>
+						</li>
+						<li>
+							<h5>서비스 업체 선택</h5>
+							<div class="select-box company_sel">
+								<ul id="sp_scanning_company_area"></ul>
+							</div>
+						</li>
+						<li>
+							<h5>세부 서비스 항목 선택</h5>
+							<div class="select-box service_scanning_sel">
+								<ul id="sp_scanning_service_area"></ul>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span class="icon"><img src="/image/icon_modeling.png" alt=""> <span class="subject">MODELING</span></span>
+						</li>
+						<li>
+							<h5>서비스 업체 선택</h5>
+							<div class="select-box company_sel">
+								<ul id="sp_modeling_company_area"></ul>
+							</div>
+						</li>
+						<li>
+							<h5>세부 서비스 항목 선택</h5>
+							<div class="select-box service_modeling_sel">
+								<ul id="sp_modeling_service_area"></ul>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span class="icon"><img src="/image/icon_printing.png" alt=""> <span class="subject">PRINTING</span></span>
+						</li>
+						<li>
+							<h5>서비스 업체 선택</h5>
+							<div class="select-box company_sel">
+								<ul id="sp_printing_company_area" ></ul>
+							</div>
+						</li>
+						<li>
+							<h5>세부 서비스 항목 선택</h5>
+							<div class="select-box service_printing_sel">
+								<ul id="sp_printing_service_area"></ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+
+				<ul class="btn-cen mT20">
+					<input type="button" id="btn_go_apply_step2" class="button button-primary button-lg" style="width:200px" value="다음단계&nbsp;&nbsp;&nbsp;>" >
+				</ul>
+			</form>
+        </div>
+		<input type="hidden" id="step1_datas" name="step1_datas" value='{ step1Datas }'>
+{ #footer }

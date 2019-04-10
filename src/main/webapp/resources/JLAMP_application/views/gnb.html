@@ -1,0 +1,165 @@
+<div id="skip-navigation">
+    <ol>
+        <li><a href="#lnb">상단 메뉴 바로가기</a></li>
+        <li><a href="#contents">본문 바로가기</a></li>
+    </ol>
+</div>
+
+<div id="wrap" class="">
+    <!-- header -->
+    <div id="header-wrap" style="left: 0px;" class="">
+        <!-- pc menu -->
+        <div id="header" style="top: 0px;">
+            <div class="header-inner inner-fixed">
+                <ul class="gnb-top">
+                    <li class="fr">
+                        { ? !IS_LOGIN }
+                        <a href="/user/login">로그인</a> <span class="bar">|</span>
+                        <a href="/user/join">회원가입</a> <span class="bar">|</span>
+                        { : }
+                        <span class="login_user_text"><b>{ userName }({ ComName })</b>님 </span> <span class="bar">|</span>
+                        <a href="/user/mypage" style="cursor:pointer;" class="mobile_main_menu_mypage">정보수정</a> <span
+                            class="bar">|</span>
+                        { / }
+                        <a onclick="goService();" style="cursor:pointer;" class="gnb-service">의료 3DP 서비스</a> <span
+                            class="bar">|</span>
+                        <a onclick="goSoftware();" style="cursor:pointer;" class="gnb-software">3DP 소프트웨어</a>
+                        { ? IS_LOGIN }
+                        <span class="bar">|</span><a href="/user/logout_prc">로그아웃</a>
+                        { / }
+                    </li>
+                </ul>
+                <div class="head-content">
+                    <h1><a href="/main"><img src="/image/logo.svg" alt="ME3D"></a></h1>
+                </div>
+            </div>
+        </div>
+        <!--//pc menu -->
+
+        <div id="toputil">
+            <div class="al_box inner-fixed">
+                <a href="" class="mob_btn"><span>모바일 메뉴 열기</span></a>
+            </div>
+        </div>
+
+        <!-- gnb -->
+        <div id="gnb" class="mob" style="height: auto; display: none; left: -220px;">
+            <div id="blind" style="opacity: 0.9; height: 0px; display: none; overflow: hidden;"><span></span></div>
+
+            <div class="mob-box">
+                <h1>
+                    <a href="/main">
+                        <img src="/image/logo.svg" alt="ME3D">
+                        <!--img src="/image/logo.jpg" alt="ME3D"-->
+                    </a>
+                </h1>
+                <div class="log-wrap f0">
+                    { ? !IS_LOGIN }
+                    <span onClick="location.href='/user/login'" style="cursor:pointer;">
+					<span class="icon-avator mR5"></span><span>로그인하세요 </span>
+				</span>
+                    <li id="logout_user_ui" class="fr">
+                    </li>
+                    { : }
+                    <span>
+					<span class="icon-avator mR5"></span><span class="login_user_text"><b>{ userName }</b>님</span>
+				</span>
+                    <li id="logout_user_ui" class="fr">
+                        <span class="icon-setting mR10" onClick="location.href='/user/mypage'"
+                              style="cursor:pointer;"></span>
+                        <span class="icon-power" onClick="location.href='/user/logout_prc'"
+                              style="cursor:pointer;"></span>
+                    </li>
+                    { / }
+                </div>
+                <ul class="goBox">
+                    <li>
+                        <a onclick="jq('#service_div').css('display','block');jq('#software_div').css('display','none');jq('.gnb-service').addClass('active');jq('.gnb-software').removeClass('active');"
+                           style="cursor:pointer;" class="gnb-service">의료 3DP 서비스</a></li>
+                    <li>
+                        <a onclick="jq('#software_div').css('display','block');jq('#service_div').css('display','none');jq('.gnb-software').addClass('active');jq('.gnb-service').removeClass('active');"
+                           style="cursor:pointer;" class="gnb-software">3DP 소프트웨어</a></li>
+                </ul>
+            </div>
+
+            <div class="al_box" id="service_div" style="display:none">
+                <nav id="nav">
+                    <ul class="group">
+                        <li class="menu1">
+                            <a onclick="location.href='/service/service';" style="cursor:pointer;"
+                               class="num1 bu-none sub_service_menu_1">서비스 소개</a>
+                        </li>
+						{ ? loginType == 'sp' }
+                        <li class="menu2">
+                            <a onclick="location.href='/service/receipt';" style="cursor:pointer;"
+                               class="num1 bu-none sub_service_menu_2">서비스 접수</a>
+                        </li>
+						{ : }
+                        <li class="menu2">
+                            <a style="cursor:pointer;" class="num1 sub_service_menu_2">서비스 신청</a>
+                            <ul id="service_menuBox" class="menuBox group" style="height: auto; display: none;">
+                                <li><a onclick="location.href='/service/apply?cd=G0050001'" style="cursor:pointer;"
+                                       class="depth" target="_self"><strong
+                                        id="service_menu_G0050001">재활의학과</strong></a></li>
+                                <li><a onclick="location.href='/service/apply?cd=G0050002'" style="cursor:pointer;"
+                                       class="depth" target="_self"><strong id="service_menu_G0050002">치과</strong></a>
+                                </li>
+                                <li><a onclick="location.href='/service/apply?cd=G0050003'" style="cursor:pointer;"
+                                       class="depth" target="_self"><strong id="service_menu_G0050003">정형외과</strong></a>
+                                </li>
+                                <li><a onclick="location.href='/service/apply?cd=G0050004'" style="cursor:pointer;"
+                                       class="depth" target="_self"><strong id="service_menu_G0050004">성형외과</strong></a>
+                                </li>
+                                <li><a onclick="location.href='/service/apply?cde=G0050005'" style="cursor:pointer;"
+                                       class="depth" target="_self"><strong
+                                        id="service_menu_G0050005">이비인후과</strong></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu3">
+                            <a onclick="location.href='/user/serviceStatus';" style="cursor:pointer;"
+                               class="num1 bu-none sub_service_menu_3">서비스 진행 현황</a><!--href="service_step"-->
+                        </li>
+						{ / }
+                        <li class="menu4">
+                            <a onclick="location.href='/service/faq/serviceFaq';" style="cursor:pointer;"
+                               class="num1 bu-none sub_service_menu_4">자주 묻는 질문</a>
+                        </li>
+                        <li class="menu5">
+                            <a onclick="location.href='/service/qna/qnaList';" style="cursor:pointer;"
+                               class="num1 bu-none sub_service_menu_5">Q&A</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="al_box" id="software_div" style="display:none">
+                <nav id="nav">
+                    <ul class="group">
+                        <li class="menu1">
+                            <a onclick="location.href='/software/introduction';" style="cursor:pointer;"
+                               class="num1 bu-none sub_software_menu_1">서비스 소개</a>
+                        </li>
+                        <li class="menu2">
+                            <a onclick="location.href='/software/software';" style="cursor:pointer;"
+                               class="num1 bu-none sub_software_menu_2">소프트웨어</a>
+                        </li>
+                        <li class="menu3">
+                            <a onclick="location.href='/software/apply';" style="cursor:pointer;"
+                               class="num1 bu-none sub_software_menu_3">서비스등록</a>
+                        </li>
+                        <li class="menu4">
+                            <a onclick="location.href='/software/faq/softwareFaq';" style="cursor:pointer;"
+                               class="num1 bu-none sub_software_menu_4">자주 묻는 질문</a>
+                        </li>
+                        <li class="menu5">
+                            <a onclick="location.href='/software/qna/qnaList';" style="cursor:pointer;"
+                               class="num1 bu-none sub_software_menu_5">Q&A</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- //gnb -->
+        <div id="blind_mob" style="opacity: 0; left: 0px; display: none;"></div>
+
+    </div>
+    <!-- //header -->

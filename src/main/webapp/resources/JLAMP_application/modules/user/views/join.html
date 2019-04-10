@@ -1,0 +1,316 @@
+{ #header }
+
+<div class="visual-sub vs-bg-08">
+	<h3>회원 가입</h3>
+	회원으로 가입하시고 다양한 혜택을 누리세요
+</div>
+
+<!-- contents -->
+<div id="contents">
+	<form id="frm_join">
+		<input type="hidden" id="is_email_check" value='N'>
+		<input type="hidden" id="is_com_num_check" value='N'>
+		<input type="hidden" id="user_idx" name="user_idx">
+		<input type="hidden" id="company_idx" name="company_idx">
+		<input type="hidden" id="work_type" name="work_type" value="join">
+
+		<h4 class="mT50">개인정보 수집/이용/보유에 대한 동의</h4>
+		<div class="grayOutBox mT20">
+			<pre class="grayBox">
+제 1장 : 총칙
+
+[제1조 : 목적]
+이 약관은 ME3D이 운영하는 인터넷 홈페이지(가 제공하는 인터넷 관련 서비스(이하 '서비스')의 이용조건 및 절차, 기타 필요한 사항을 규정함을 목적으로 합니다.
+
+[제2조 : 약관의 효력 및 변경]
+(1)본 약관은 본 서비스의 화면에 게시함으로써 효력이 발생합니다.
+(2)서비스는 중요한 사유가 있을 때 이 약관을 변경할 수 있으며, 변경된 약관은 제1항의 방법으로 공지함으로써 효력이 발생합니다.
+
+[제2조 : 약관의 효력 및 변경]
+(1)본 약관은 본 서비스의 화면에 게시함으로써 효력이 발생합니다.
+(2)서비스는 중요한 사유가 있을 때 이 약관을 변경할 수 있으며, 변경된 약관은 제1항의 방법으로 공지함으로써 효력이 발생합니다.
+			</pre>
+		</div>
+
+		<ul class="f0 mT20">
+			<li class="fr">
+				<div class="check-wrap">
+					<input type="checkbox" id="agree_personal" name="agree_personal" value=1 >
+					<label for="agree_personal"><span class="checkbox"></span> 개인정보 수집· 이용· 보유 동의</label>
+				</div>
+
+				<div class="check-wrap mT10">
+					<input type="checkbox" id="agree_unique" name="agree_unique" value=1 >
+					<label for="agree_unique"><span class="checkbox"></span> 고유식별정보 수집· 이용·보유 동의</label>
+				</div>
+			</li>
+		</ul>
+
+		<!-- table start -->
+		<table cellspacing="0" border="1" summary="리스트" class="tbl-write mT50">
+			<caption>목록</caption>
+			<colgroup>
+				<col width="200px"><col width="">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th><span class="font-p1">*</span> 이메일</th>
+					<td>
+						<input type="text" id="email" name="email" maxlength="30" style="width:165px"> @ <input type="text" id="email_address" name="email_address" style="width:165px;">
+						<input type="text" id="sel_email_address" style="width:165px">
+						<input type="button" id="check_email" class="button button-line button-form" value="중복체크 ">
+					</td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 성명</th>
+					<td><input type="text" id="user_name" name="user_name" class="inline" maxlength="20" style="width:165px"> </td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 비밀번호</th>
+					<td>
+						<input type="password" id="password" name="password"  class="inline" minlength="8"  maxlength="15"  style="width:165px">
+						<span class="font-help pL10 pR10">비밀번호는 8~15자로 입력해 주십시오.</span>
+					</td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 비밀번호 확인</th>
+					<td>
+						<input  type="password" id="password_confirm" name="password_confirm" class="inline" minlength="8"  maxlength="15" style="width:165px">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //table end-->
+
+		<h4 class="mT50">기업 정보를 추가로 입력해 주십시오</h4>
+
+		<!-- table start -->
+		<table cellspacing="0" border="1" summary="리스트" class="tbl-write mT20">
+			<caption>목록</caption>
+			<colgroup>
+				<col width="200px"><col width="">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th><span class="font-p1">*</span> 사업자등록번호</th>
+					<td>
+						<input type="text" id="com_num1" name="com_num1" maxlength="3" style="width:85px">  -
+						<input type="text" id="com_num2" name="com_num2" maxlength="2" style="width:65px">  -
+						<input type="text" id="com_num3" name="com_num3" maxlength="5" style="width:165px">
+						<input type="button" id="check_com_num" class="button button-line button-form" value="중복체크 ">
+						<span class="font-help pL10 pR10">중복체크 후 기업정보 입력이 가능합니다.</span>
+					</td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 업체구분</th>
+					<td id="sel_company_type_area"></td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 기관/업체 명</th>
+					<td>
+						<input type="text" id="com_name" name="com_name" maxlength="20" style="width:165px">
+					</td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 대표자 명</th>
+					<td><input type="text" id="ceo_name" name="ceo_name" sclass="inline" maxlength="20" style="width:165px"> </td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 대표 전화번호 </th>
+					<td>
+						<input type="text" id="com_tel1" name="com_tel1" style="width:165px"> -
+						<input type="text" id="com_tel2" name="com_tel2" maxlength="4" style="width:165px"> -
+						<input type="text" id="com_tel3" name="com_tel3" maxlength="4" style="width:165px">
+					</td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 지역</th>
+					<td>
+						<input type="text" id="region_code" name="region_code" style="width:165px">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //table end-->
+
+		<h4 class="mT50 is_hospital_info_area" style="display:none;">진료기관은 아래 항목을 추가로 입력해 주십시오</h4>
+
+		<!-- table start -->
+		<table cellspacing="0" border="1" summary="리스트" class="tbl-write mT20 is_hospital_info_area"  style="display:none;">
+			<caption>목록</caption>
+			<colgroup>
+				<col width="100px"><col width="100px"><col width="">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th colspan="2"><span class="font-p1">*</span> 진료과목</th>
+					<td id="medical_dept_list"></td>
+				</tr>
+				<tr>
+					<th colspan="2"><span class="font-p1">*</span> 서비스 항목</th>
+					<td id="medical_service_list"></td>
+				</tr>
+				<tr>
+					<td colspan="3">업체를 미리 선택하시면 [서비스 신청] 시 업체가 선택되어 있어 편리합니다.</td>
+				</tr>
+				<tr>
+					<th rowspan="3">업체선택</th>
+					<th class="left-line">Scanning</th>
+					<td>
+						<input type="hidden">
+						<input type="text" id="sel_scanning_company"  name="sel_scanning_company" style="width:165px">
+						<input type="button" id="search_scanning_company" class="button button-line button-form" value="업체정보조회 ">
+					</td>
+				</tr>
+				<tr>
+					<th class="left-line">Modeling</th>
+					<td>
+						<input type="hidden" >
+						<input type="text" id="sel_modeling_company" name="sel_modeling_company" style="width:165px">
+						<input type="button" id="search_modeling_company" class="button button-line button-form" value="업체정보조회 ">
+					</td>
+				</tr>
+				<tr>
+					<th class="left-line">Printing</th>
+					<td>
+						<input type="hidden">
+						<input type="text" id="sel_printing_company" name="sel_printing_company" style="width:165px">
+						<input type="button" id="search_printing_company" class="button button-line button-form" value="업체정보조회 ">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //table end-->
+
+		<h4 class="mT50 is_sp_info_area"  style="display:none;">제공 서비스를 입력해 주십시오.</h4>
+		<!-- table start -->
+		<table cellspacing="0" border="1" summary="리스트" class="tbl-write mT20 is_sp_info_area"  style="display:none;">
+			<caption>목록</caption>
+			<colgroup>
+				<col width="200px"><col width="">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th><span class="font-p1">*</span> 서비스 상태</th>
+					<td>
+						<input type="text" id="sel_status_code" name="sel_status_code" style="width:165px">
+					</td>
+				</tr>
+				<tr>
+					<th><span class="font-p1">*</span> 제공 서비스</th>
+					<td>
+						<input type="text" id="sel_step1_proc"  style="width:165px">
+						<input type="text" id="sel_step2_proc" class="service_proc" style="width:165px">
+						<input type="text" id="sel_step3_proc" class="service_proc" style="width:165px">
+					</td>
+				</tr>
+				<tr id="scanning_service_area" style="height:77px;">
+					<th><span class="font-p1">*</span> Scanning</th>
+					<td id="scanning_service_list"></td>
+				</tr>
+				<tr id="modeling_service_area" style="height:77px;">
+					<th><span class="font-p1">*</span> Modeling</th>
+					<td id="modeling_service_list"></td>
+				</tr>
+				<tr id="printing_service_area" style="height:77px;">
+					<th><span class="font-p1">*</span> Printing</th>
+					<td id="printing_service_list"></td>
+				</tr>
+				<tr>
+					<th>서비스 병원</th>
+					<td>
+						<textarea id="service_hospital" name="service_hospital" class="inline" style="width:100%"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<th>특장점 소개</th>
+					<td>
+						<textarea id="characteristic" name="characteristic" class="inline" style="width:100%"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //table end-->
+
+		<!-- button -->
+		<div class="btn-cen mT20">
+			<a href="javascript:void(0);" class="button button-primary" onclick="saveData();">가입하기</a>
+		</div>
+		<!-- //button -->
+
+	</form>
+</div>
+<!-- //contents -->
+
+<!-- Modal -->
+<div class="modal" id="mdl_company" tabindex="-1" role="dialog" aria-labelledby="mdlCompany" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="font_20_b text-center mt_30">업체 정보 조회</div>
+			<div class="modal-body">
+				<table class="list_table">
+					<colgroup>
+						<col width="200px;">
+					</colgroup>
+					<tr>
+						<th>업체명</th>
+						<td><div id="mdl_com_name"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>대표자</th>
+						<td><div id="mdl_ceo_name"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>전화번호</th>
+						<td><div id="mdl_tel"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>지역</th>
+						<td><div id="mdl_region"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>서비스상태</th>
+						<td><div id="mdl_status"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>스캔서비스 항목</th>
+						<td><div id="mdl_scanning"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>모델링서비스 항목</th>
+						<td><div id="mdl_modeling"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>프린팅 서비스 항목</th>
+						<td><div id="mdl_printing"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>서비스 병원 현황</th>
+						<td><div id="mdl_service_hospital"></div>
+						</td>
+					</tr>
+					<tr>
+						<th>업체 특장점 소개</th>
+						<td><div id="mdl_characteristic"></div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="text-center mb_40">
+				<input class="button button-point button-form" type="button" value="닫기 " data-dismiss="modal">
+			</div>
+		</div> <!-- 모달 콘텐츠 -->
+	</div> <!-- 모달 다이얼로그 -->
+</div>
+<!-- 모달 전체 윈도우 -->
+
+
+{ #footer }

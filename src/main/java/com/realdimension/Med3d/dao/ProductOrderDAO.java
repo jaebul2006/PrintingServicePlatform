@@ -1,0 +1,16 @@
+package com.realdimension.Med3d.dao;
+
+import java.util.HashMap;
+import java.util.List;
+
+import com.realdimension.Med3d.VO.OrderVO;
+
+public interface ProductOrderDAO {
+
+	public void Order(OrderVO vo) throws Exception;
+	public List<OrderVO> OrderList(String requester_id) throws Exception;
+	public OrderVO FindOrder(String order_id) throws Exception;
+	public List<OrderVO> AllOrderList() throws Exception;
+	public void OrderMakeStart(HashMap map) throws Exception;
+	
+}

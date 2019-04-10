@@ -1,0 +1,83 @@
+{ #header }
+
+    <!-- container -->
+    <div id="container">
+        <div class="visual-sub vs-bg-05">
+            <h3>Q&A</h3>
+            궁금한 것은 무엇이든 물어보세요
+        </div>
+        <!-- contents -->
+        <div id="contents">
+
+            <form method="post" id="frm_qna_save" name="frm_qna_save" enctype="multipart/form-data" action="/">
+                <input type="hidden" id="sw_qna_idx" name="sw_qna_idx" value="{ swQnAIdx }"/>
+                <input type="hidden" id="page" name="page" value="{ page }"/>
+                <input type="hidden" id="delete_img" name="delete_img" value=""/>
+                <!-- table start -->
+                <table cellspacing="0" border="1" summary="리스트" class="tbl-write mT50">
+                    <caption>목록</caption>
+                    <colgroup>
+                        <col width="200px">
+                        <col width="">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th><span class="font-p1">*</span> 닉네임</th>
+                        <td>
+                            <input type="text" id="nickname" name="nickname" class="input-write m-100" style="width:165px;" maxlength="20">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>첨부파일</th>
+                        <td>
+                            <!-- file-add-wrap start -->
+
+                            <div id="detail_img_html">
+                            </div>
+                            <div class="file-mini-wrap">
+                                <ul>
+                                    <li>
+                                                <span class="input_wrap">
+                                                    <span class="input-bfs" aria-hidden="true"></span>
+                                                    <div class="">
+                                                        <!--<input type="text" class=" form-control bfs-text" disabled="" placeholder="선택하세요">-->
+                                                        <span class="">
+                                                            <input type="file" name="files[]" id="files" class="bfs-input"
+                                                                   aria-label="files"> <!---->
+                                                        </span>
+                                                    </div>
+                                                </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //file-add-wrap end -->
+                            * 이미지 파일만 첨부 가능 합니다. (jpg, gif, png)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="font-p1">*</span> 제목</th>
+                        <td>
+                            <input id="subject" name="subject" type="text" class="input-write" style="width:100%;" maxlength="50">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="font-p1">*</span> 내용</th>
+                        <td><textarea id="txtarea_content" name="txtarea_content" type="text" class="input-write"
+                                      style="width:100%; height: 150px" maxlength="65535"></textarea></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- //table end-->
+                <ul class="btn-both mT20">
+                    <li class="fr">
+                        <a onclick="doSave()" class="button button-point">저장</a>
+                        <a onclick="goList()" class="button">리스트</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <!-- //contents -->
+        <!-- container -->
+    </div>
+
+{ #footer}

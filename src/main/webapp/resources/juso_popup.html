@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<script type="text/javascript" src="http://1.234.21.106:8983/app/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://1.234.21.106:8983/app/js/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="http://1.234.21.106:8983/app/js/rns.search-1.0.min.js"></script>
+
+<title>Juso Search Sample - Basic</title>
+<style>
+	.tab-basic a.on {
+		background: #247BC3 !important;
+		border-top: none !important;
+		border-left: none !important;
+		border-right: none !important;
+		border-bottom: 2px solid #247BC3;
+		color: #fff !important;
+	}
+
+	.tab-basic a {
+		color: #9fa0a0 !important;
+		border-bottom: 2px solid #247BC3 !important;
+	}
+
+	.searchBox {
+		border-top: 1px solid #ddddde !important;
+		border-bottom: 1px solid #ddddde !important;
+	}
+
+	.searchBox .queryTextBox {
+		outline: none !important;
+	}
+</style>
+<script>
+var rnsSearch = new rnsSearch({
+	searchServerUrl : "http://1.234.21.106:8983",
+	width : 500,
+	height : 650,
+	oncomplete : function(data) {
+		$(opener.location).attr("href", "javascript:setAddress(" + JSON.stringify(data) + ");");
+	},
+	theme : {
+		bgColor : "#ffffff",					// 바탕 배경색
+		searchBgColor : "#ececec",	// 검색창 배경색
+		contentBgColor : "#ececec",		// 본문 배경색
+		pageBgColor : "#ffffff",			// 페이지 배경색
+		textColor : "#333333",					// 기본 글자색
+		queryTextColor : "#333333",		// 검색창 글자색
+		postcodeTextColor : "#333333",// 우편번호 글자색
+		emphTextColor : "#008BD3", 		// 강조 글자색
+		outlineColor : "#ddddde",				// 테두리
+		logoTextColor : "#666666"				// 로고 글자색
+	}
+}).open({
+	popupName : "도로명주소검색 ver1.1.0",
+	logoText : " ",
+	left : (window.screen.width / 2) - (width / 2),
+	top : (window.screen.height / 2) - (height / 2),
+	autoClose : false,
+	searchTypes : ["ADDR", "OLD_ADDR"],
+	farNmUseYn : "N",
+	selectSigUseYn : "N",
+	autocompleteUseYn : "Y",
+	autoClose: "Y"
+});
+</script>
+</head>
+<body>
+</body>
+</html>

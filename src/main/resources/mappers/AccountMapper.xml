@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.realdimension.Med3d.AccountMapper">
+	
+	<insert id="RegistAccount" parameterType="com.realdimension.Med3d.VO.accountVO">
+		INSERT INTO account (id, pass, account_name, type) 
+		VALUES (#{id}, #{pass}, #{account_name}, #{type})
+	</insert>
+	
+	<select id="AccountCnt" resultType="int">
+		SELECT COUNT(*)
+		FROM
+			account
+		WHERE 
+			id = #{id}	
+	</select>
+	
+	<select id="getAccount" resultType="com.realdimension.Med3d.VO.accountVO">
+		SELECT 
+			id, pass
+		FROM
+			account
+		WHERE
+			id = #{id}
+	</select>
+	
+	<select id="LoginCheck" resultType="int">
+		SELECT COUNT(*)
+		FROM
+			account
+		WHERE 
+			id = #{id}	
+		AND
+			pass = #{pass}
+	</select>
+	
+	<select id="Producers" resultType="com.realdimension.Med3d.VO.accountVO">
+		SELECT *
+		FROM
+			account
+		WHERE
+			type = 'producer'
+	</select>
+	
+	<select id="AccountType" resultType="String">
+		SELECT type
+		FROM
+			account
+		WHERE
+			id = #{id}
+	</select>
+	
+</mapper>

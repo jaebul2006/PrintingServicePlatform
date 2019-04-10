@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.realdimension.Med3d.ProductOrderMapper">
+
+	<insert id="Order" parameterType="com.realdimension.Med3d.VO.OrderVO">
+		INSERT INTO product_order (id, order_date, requester_id, comment, service_type, business_trip, body_type, result_type, work_time, start_time, work_state) 
+		VALUES (#{id}, #{order_date}, #{requester_id}, #{comment}, #{service_type}, #{business_trip}, #{body_type}, #{result_type}, #{work_time}, #{start_time}, #{work_state})
+	</insert>
+	
+	<select id="OrderList" parameterType="String" resultType="com.realdimension.Med3d.VO.OrderVO">
+		SELECT *
+		FROM
+			product_order
+		WHERE 
+			requester_id = #{requester_id}	
+	</select>
+
+	<select id="OrderFind" parameterType="String" resultType="com.realdimension.Med3d.VO.OrderVO">
+		SELECT *
+		FROM
+			product_order
+		WHERE 
+			id = #{id}
+	</select>
+	
+	<select id="AllOrderList" resultType="com.realdimension.Med3d.VO.OrderVO">
+		SELECT *
+		FROM
+			product_order
+	</select>
+	
+	<update id="OrderMakeStart">
+		UPDATE product_order
+		SET
+			work_time=#{work_time}, start_time=#{start_time}, work_state=#{work_state} 
+		WHERE
+			id = #{id}
+	</update>
+	
+</mapper>

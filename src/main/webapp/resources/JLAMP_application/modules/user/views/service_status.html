@@ -1,0 +1,87 @@
+{ #header }
+	<div class="visual-sub vs-bg-03">
+				<h3>서비스 진행 현황</h3>
+		신청한 서비스의 진행상태를 확인할 수 있습니다.
+	</div>
+	<!-- contents -->
+	<div id="contents">
+		<input type="hidden" id="service_code" name="service_code" value="{ serviceCode }">
+		<input type="hidden" id="hd_page" name="hd_page" value="{ hdPage }">
+		<h5 class="title mT50"><span id="user_name" class="font-p1">"{ userName }"</span> 서비스 신청 완료</h5>
+
+		<div class="box-line mT30 pT30 pB30">
+			 <img id="status_img" src="/image/svc-step-01.png" alt="" style="max-width:100%">
+			 <div id="status_process" class="center mT20">
+					<table cellspacing="0" style="width:100%;max-width:100%" >
+						<colgroup>
+							<col width="25%">
+							<col width="16%">
+							<col width="18%">
+							<col width="16%">
+							<col width="25%">
+						</colgroup>
+						<tr>
+							<td id="svc_step_01_arrow" class="text-right status_arrow_area" style="padding-right:4%"><img src="/image/arrow_ing.gif" alt=""></td>
+							<td id="svc_step_02_01_arrow" class="status_arrow_area"><img src="/image/arrow_ing.gif" alt=""></td>
+							<td id="svc_step_02_02_arrow" class="status_arrow_area"><img src="/image/arrow_ing.gif" alt=""></td>
+							<td id="svc_step_02_03_arrow" class="status_arrow_area"><img src="/image/arrow_ing.gif" alt=""></td>
+							<td id="svc_step_03_arrow" class="text-left status_arrow_area" style="padding-left:5%"><img src="/image/arrow_ing.gif" alt=""></td>
+						</tr>
+					</table>
+			 </div>
+		</div>
+
+		<h5 id="status_text" class="title mT50 center"></h5>
+
+        <!-- list -->
+        <div class="faq" id="status_list_html">
+
+
+        </div>
+        <!-- //list -->
+
+		<!-- table start 
+		<table cellspacing="0" border="1" summary="리스트" class="tbl-list stripe mT20">
+			<caption>목록</caption>
+			<colgroup>
+				<col width="15%">
+				<col width="20%">
+				<col width="15%">
+				<col width="15%">
+				<col width="15%">
+				<col width="10%">
+				<col width="10%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>서비스 코드</th>
+					<th>서비스</th>
+					<th>신청 일자</th>
+					<th>송장 번호</th>
+					<th>진행 상태</th>
+					<th>STL 뷰어 </th>
+					<th>상세보기</th>
+				</tr>
+			</thead>
+			<tbody id="list_html"></tbody>
+		</table>
+		-->
+		<!-- //table end-->
+
+		<!-- paginate-complex -->
+		<div class="paginate mT10" >
+				<div  class="light-theme ">
+					<ul id="pagination_html">
+					</ul>
+				</div>
+			</div>
+		<!-- //paginate-complex -->
+
+	</div>
+	<!-- //contents -->
+	<script type="text/x-kendo-template" id="service_template">
+
+			<div id="service_subjectivity" class="service_subjectivity"></div>
+
+	</script>
+{ #footer }

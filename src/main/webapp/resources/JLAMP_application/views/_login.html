@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{ TITLE }</title>
+
+	<!-- bootstrap 3.3.5 //-->
+	<link rel="stylesheet" href="/third_party/bootstrap-3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/third_party/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+	<!-- loading overlay //-->
+	<link rel="stylesheet" href="/third_party/loading-overlay/waitMe.css">
+
+	<!-- bootstrap custom //-->
+	<link rel="stylesheet" href="/css/boostrap_modify.css">
+
+	{ ? SERVER_ADDR != '192.168.173.161' }
+	<link rel="stylesheet" href="/css/JLAMP.common.css">
+	{ : }
+	<link rel="stylesheet" href="/css/JLAMP.common.min.css">
+	{ / }
+
+	<link rel="stylesheet" href="/css/common.css">
+
+	<!-- jquery 2.1.4 //-->
+	<script type="text/javascript" src="/third_party/jquery-2.1.4/jquery.js"></script>
+	<!-- jquery-ui 1.11.4 //-->
+	<script type="text/javascript" src="/third_party/jquery-ui-1.11.4/jquery-ui.js"></script>
+	<!-- loading overlay //-->
+	<script type="text/javascript" src="/third_party/loading-overlay/waitMe.js"></script>
+
+	<script>
+		var jq = $.noConflict();
+	</script>
+
+	{ ? SERVER_ADDR != '192.168.173.161' }
+	<script type="text/javascript" src="/js/JLAMP.js"></script>
+	<script type="text/javascript" src="/js/JLAMP.common.js"></script>
+	{ : }
+	<script type="text/javascript" src="/js/JLAMP.min.js"></script>
+	<script type="text/javascript" src="/js/JLAMP.common.min.js"></script>
+	{ / }
+
+	<script type="text/javascript" src="/js/login.js"></script>
+</head>
+<body>
+	<div class="login_back">
+		<form id="frm_login" method="get" action="/" onsubmit="return doLogin()">
+			<div class="login_wrap">
+				<div class="text-center"><img src="/image/logo-1.png" alt="JLAMP5"></div>
+				<div class="login_input">
+					<div><input type="text" id="login_id" class="input_100" placeholder="ID" value="{ loginID }"></div>
+					<div><input type="password" id="login_passwd" class="input_100" placeholder="PASSWORD" style="margin-top:3px;"></div>
+				</div>
+				<div class="login_check">
+					<label class="checkbox-inline" style="color:#ffffff;text-shadow:#000000 1px 1px 1px;">
+						<input type="checkbox" id="is_save_id" { isSaveID } > 아이디 저장
+					</label>
+				</div>
+				<div><button type="submit" class="btn_login" >로그인</button></div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

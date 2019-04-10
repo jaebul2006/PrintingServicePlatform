@@ -1,0 +1,135 @@
+<!-- 사원 정보 Modal : pop_emp -->
+<div class="modal fade" id="jlamp_pop_emp" tabindex="-1" role="dialog" aria-labelledby="jlamp_pop_emplabel" aria-hidden="true" style="z-index: 2000;">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content" >
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+				<h4 class="modal-title" id="jlamp_pop_emplabel">&nbsp;</h4>
+			</div>
+			<div class="modal-body" >
+				<!-- 검색 -->
+				<div class="table_title"><span jlamp-pop-title></span><span class="popup_search_btn"><input type="image" src="/image/icon_search.png" onmouseover="this.src='/image/icon_search_on.png'" onmouseout="this.src='/image/icon_search.png'" alt="검색"  jlamp-pop-searchbtn jlamp-pop-modaltype="pop_emp"></span>
+				</div>
+				<div class="search_area_bottom">
+					<table class="popup_table">
+						<colgroup>
+							<col width="120px">
+							<col width="">
+						</colgroup>
+						<tr>
+							<td style="text-align: right; font-weight: bold;">
+								사 원
+							</td>
+							<td>
+								<input type="text" id="jlamp_pop_empcode" class="input_40" style="float: left"
+									   jlamp-popcode
+									   jlamp-pop-formcontrol="txtemp_code"
+								/>
+								<input type="text" id="jlamp_pop_empname" class="input_60" style="float: left; border-left: 0;"
+									   jlamp-popname
+									   jlamp-pop-formcontrol="txtemp_name"
+								/>
+							</td>
+						</tr>
+						<tr jlamp-role="worktype">
+							<td style="text-align:right; font-weight: bold;">
+								재직구분
+							</td>
+							<td>
+								<input id="jlamp_pop_empworktype"
+									   jlamp-autobinding
+									   bizcomponentid="L_HRI009"
+									   jlamp-ab-wherequery=""
+									   jlamp-ab-emptyrow="true"
+									   jlamp-pop-formcontrol="cboemp_state"
+								/>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!--// 검색 -->
+				<!-- Grid -->
+				<div  class="modal_list_html" >
+					<div jlamp-pop-list jlamp-pop-modaltype="pop_emp"></div>
+				</div>
+				<!--// Grid -->
+				<div class="bn_area"><button class="pop_bn_red" type="button" data-dismiss="modal">닫기</button></div>
+			</div>
+		</div> <!--// 모달 콘텐츠 -->
+	</div> <!--// 모달 다이얼로그 -->
+</div> <!--// 사원 정보 -->
+
+<!-- 부서 정보 Modal : pop_dept -->
+<div class="modal fade" id="jlamp_pop_dept" tabindex="-1" role="dialog" aria-labelledby="jlamp_pop_deptlabel" aria-hidden="true" style="z-index: 2001;">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+				<h4 class="modal-title" id="jlamp_pop_deptlabel">&nbsp;</h4>
+			</div>
+			<div class="modal-body">
+				<!-- 검색 -->
+				<div class="table_title"><span jlamp-pop-title></span><span class="popup_search_btn"><input type="image" src="/image/icon_search.png" onmouseover="this.src='/image/icon_search_on.png'" onmouseout="this.src='/image/icon_search.png'" alt="검색"  jlamp-pop-searchbtn jlamp-pop-modaltype="pop_dept"></span></div>
+				<div class="search_area_bottom">
+					<table class="popup_table">
+						<colgroup>
+							<col width="30%;">
+							<col width="70%;">
+						</colgroup>
+						<tr>
+							<td>
+								<input type="text" id="jlamp_pop_deptcode" class="input_100"
+									   jlamp-popcode
+									   jlamp-pop-formcontrol="txtdept_code"
+								/>
+							</td>
+							<td>
+								<input type="text" id="jlamp_pop_deptname" class="input_100"
+									   jlamp-popname
+									   jlamp-pop-formcontrol="txtdept_name"
+								/>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- 검색 끝 -->
+				<!-- Grid -->
+				<div jlamp-pop-list jlamp-pop-modaltype="pop_dept"></div>
+				<!-- Grid 끝-->
+				<div class="bn_area"><button class="pop_bn_red" type="button" data-dismiss="modal">닫기</button></div>
+			</div>
+		</div> <!--// 모달 콘텐츠 -->
+	</div> <!--// 모달 다이얼로그 -->
+</div> <!--// 부서 정보 -->
+
+<!-- 상품 정보 Modal : pop_item -->
+<div class="modal fade" id="jlamp_pop_item" tabindex="-1" role="dialog" aria-labelledby="jlamp_pop_itemlabel" aria-hidden="true" style="z-index: 2000;">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content" >
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+				<h4 class="modal-title" id="jlamp_pop_itemlabel">&nbsp;</h4>
+			</div>
+			<div class="modal-body" >
+				<!-- 검색 -->
+				<div class="table_title"><span jlamp-pop-title></span><span class="popup_search_btn"><input type="image" src="/image/icon_search.png" onmouseover="this.src='/image/icon_search_on.png'" onmouseout="this.src='/image/icon_search.png'" alt="검색" jlamp-pop-searchbtn jlamp-pop-modaltype="pop_item"></span>
+				</div>
+				<div class="search_area_bottom">
+					<table class="popup_table">
+						<colgroup>
+							<col width="120px">
+							<col width="">
+						</colgroup>
+					</table>
+				</div>
+				<!--// 검색 -->
+				<!-- Grid -->
+				<div  class="modal_list_html" >
+					<div jlamp-pop-list jlamp-pop-modaltype="pop_item"></div>
+				</div>
+				<!--// Grid -->
+				<div class="bn_area"><button class="pop_bn_red" type="button" data-dismiss="modal">닫기</button></div>
+			</div>
+		</div> <!--// 모달 콘텐츠 -->
+	</div> <!--// 모달 다이얼로그 -->
+</div> <!--// 상품 정보 -->

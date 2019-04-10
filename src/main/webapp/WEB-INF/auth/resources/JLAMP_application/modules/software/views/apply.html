@@ -1,0 +1,82 @@
+{ #header }
+
+    <div class="visual-sub vs-bg-02">
+        <h3>소프트웨어 서비스 등록</h3>
+        3DP 소프트웨어는 3D Printing 에 필요한 소프트웨어를 다운 받을 수 있는 서비스입니다.
+    </div>
+	<!-- contents -->
+	<div id="contents">
+		<form id="frm_software_apply"  method="post">
+			<input type="hidden" id="user_idx" name="user_idx" value="{ userIdx }">
+			<input type="hidden" id="company_idx" name="company_idx" value="{ companyIdx }">
+			<input type="hidden" id="is_manager" name="is_manager" value="{ isManager }">
+			<input type="hidden" id="work_type" name="work_type" value="mypage">
+
+			<!-- table start -->
+			<table cellspacing="0" border="1" summary="리스트" class="tbl-write mT50">
+				<caption>목록</caption>
+				<colgroup>
+					<col width="200px"><col width="">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>사용자명</th>
+						<td>{ userName }</td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td>{ userEmail }</td>
+					</tr>
+					<tr>
+						<th>업체명</th>
+						<td>{ ComName }</td>
+					</tr>
+					<tr>
+						<th>지역</th>
+						<td id="region_name"></td>
+					</tr>
+					<tr>
+						<th><span class="font-p1">*</span> 상태</th>
+						<td><input type="text" id="status_code" name="status_code" class="inline" maxlength="20" style="width:165px"> </td>
+					</tr>
+					<tr>
+						<th><span class="font-p1">*</span> 소프트웨어 종류</th>
+						<td><input type="text" id="sw_type_code" name="sw_type_code" class="inline" maxlength="20" style="width:165px"></td>
+					</tr>
+					<tr>
+						<th><span class="font-p1">*</span> 서비스 유형</th>
+						<td><input type="text" id="service_type_code" name="service_type_code" class="inline" maxlength="20" style="width:165px"></td>
+					</tr>
+					<tr>
+						<th><span class="font-p1">*</span> 서비스 선택</th>
+						<td><input type="text" id="price_code" name="price_code" class="inline" maxlength="20" style="width:165px"></td>
+					</tr>
+					<tr>
+						<th><span class="font-p1">*</span> 설치OS</th>
+						<td><input type="text" id="os_code" name="os_code" class="inline" maxlength="20" style="width:165px"></td>
+					</tr>
+					<tr>
+						<th><span class="font-p1">*</span> 사용시스템ID</th>
+						<td><input type="text" id="system_id" name="system_id" class="inline" maxlength="20" style="width:165px"></td>
+					</tr>
+					<tr>
+						<th>라이선스 유효기간</th>
+						<td>
+							<input type="text" id="license_start_date" name="license_start_date" style="width:165px; height: 34px;"> ~ 
+							<input type="text" id="license_end_date" name="license_end_date" style="width:165px; height: 34px;">
+						</td>
+					</tr>
+					<tr>
+						<th>라이선스 파일 등록</th>
+						<td><input type="text" id="license_file" name="license_file" class="inline" maxlength="20" style="width:165px"></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<!-- button -->
+			<div class="btn-cen mT20">
+				<a href="javascript:void(0);" class="button button-primary" onclick="saveData();">등록</a>
+			</div>
+		</form>
+	</div>
+{ #footer }

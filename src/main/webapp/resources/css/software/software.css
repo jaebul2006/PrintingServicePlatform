@@ -1,0 +1,9 @@
+
+/*2017.12.22 ±è¿µÅ¹ Ãß°¡*/
+.software-wrap{ }
+.software-wrap > ul{ clear:both; overflow: hidden; line-height: 24px}
+.software-wrap > ul > li{ width:50%}
+.software-wrap > ul > li:nth-child(1n){ float: left; padding-right: 30px}
+.software-wrap > ul > li:nth-child(2n){ float: right; padding-left: 30px}
+.software-wrap .sw-box li{ border-bottom:1px solid #ccc; padding: 20px 0}
+.software-wrap .sw-box li.dot{ border-bottom:1px dashed #ccc}

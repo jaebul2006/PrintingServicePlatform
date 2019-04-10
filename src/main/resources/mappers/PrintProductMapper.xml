@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.realdimension.Med3d.PrintProductMapper">
+
+	<select id="CastSplintCompaniesList" resultType="com.realdimension.Med3d.VO.PrintProductCompaniesVO">
+		SELECT *
+		FROM
+			cast_splint_companies
+	</select>
+
+	<insert id="CastSplintCompanyRegist" parameterType="com.realdimension.Med3d.VO.PrintProductCompaniesVO">
+		INSERT INTO cast_splint_companies (account_id, com_num, com_name, represen_name, represen_num, region) 
+		VALUES (#{account_id}, #{com_num}, #{com_name}, #{represen_name}, #{represen_num}, #{region})
+	</insert>
+ 
+ 	<select id="BraceCompaniesList" resultType="com.realdimension.Med3d.VO.PrintProductCompaniesVO">
+		SELECT *
+		FROM
+			brace_companies
+	</select>
+ 
+	<insert id="BraceCompanyRegist" parameterType="com.realdimension.Med3d.VO.PrintProductCompaniesVO">
+		INSERT INTO brace_companies (account_id, com_num, com_name, represen_name, represen_num, region) 
+		VALUES (#{account_id}, #{com_num}, #{com_name}, #{represen_name}, #{represen_num}, #{region})
+	</insert>
+
+	<select id="InsoleCompaniesList" resultType="com.realdimension.Med3d.VO.PrintProductCompaniesVO">
+		SELECT *
+		FROM
+			insole_companies
+	</select>
+
+	<insert id="InsoleCompanyRegist" parameterType="com.realdimension.Med3d.VO.PrintProductCompaniesVO">
+		INSERT INTO insole_companies (account_id, com_num, com_name, represen_name, represen_num, region) 
+		VALUES (#{account_id}, #{com_num}, #{com_name}, #{represen_name}, #{represen_num}, #{region})
+	</insert>
+
+</mapper>

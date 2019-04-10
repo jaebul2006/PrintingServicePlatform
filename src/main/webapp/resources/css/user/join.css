@@ -1,0 +1,26 @@
+.input_kendo_date {
+    width:150px; 
+    height:29px;
+}
+
+.k-widget.k-dropdown.k-header span.k-input {
+    height: 29px; 
+}
+
+.k-dropdown-wrap .k-select, .k-numeric-wrap .k-select, .k-picker-wrap .k-select {
+    min-height: 0px;
+}
+
+
+.mt_30 {margin-top: 30px;}
+.mb_40 {margin-bottom:40px;}
+.font_20_b {font-size:20px; font-weight:500; line-height:34px;}
+
+.list_table {border-collapse: collapse; width: 100%; border-left:1px solid #ddddde; border-top:1px solid #ddddde; margin:10px 0 10px 0;}
+.list_table th {padding:5px; height:40px; text-align: center; border-right:1px solid #ddddde; border-bottom:1px solid #ddddde; background-color:#f7f7f7;font-weight:normal}
+.list_table td {padding:5px; height:40px; text-align: left; border-right:1px solid #ddddde; border-bottom:1px solid #ddddde;}
+.list_table td.lefttxt {text-align:left;}
+
+
+.note_area {width:100%; padding:20px; background-color:#f2f2f2; border:1px solid #d5d5d5; margin-top:20px; line-height:24px; float:left;}
+.note_detail_area {width:100%; padding:10px; background-color:#f2f2f2; border:1px solid #d5d5d5; margin-bottom:10px; line-height:24px; float:left;}

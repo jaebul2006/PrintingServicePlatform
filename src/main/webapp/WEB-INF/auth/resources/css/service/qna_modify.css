@@ -1,0 +1,47 @@
+.k-editor .k-editable-area {
+	padding: 0px 0px 0px 0px;
+	border: 1px solid #c4c2c2;
+}
+.k-window-titlebar {
+	padding: .4em 0;
+}
+.k-upload .k-upload-button {
+    background-color: #393c44;
+    color: #fff;
+}
+.k-button.k-upload-button.k-state-focused {
+    background-color: #393c44;
+    color: #fff;
+}
+.k-edit-form-container .k-edit-buttons {
+	margin: 0px 0px 0px;
+	padding: 1em 1em 0px 0px;
+}
+/*
+.k-dialog-insert.k-button.k-primary {
+    background-color: #393c44;
+	border-color: #393c44;
+}
+*/
+.k-dialog-close.k-button {
+    background-color: #393c44;
+	border-color: #393c44;
+    color: #fff;
+}
+.k-editor-dialog .k-edit-field {
+    width: 60%;
+}
+.k-edit-field {
+    margin-right: 5%;
+	padding: 0px 0px 0px 0px;
+}
+.k-window-title {
+    text-align: center;
+}
+div.k-window {
+    padding-bottom: 15px;
+    border-radius:  6px;
+}
+.k-textbox:focus {
+    box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.06);
+}
