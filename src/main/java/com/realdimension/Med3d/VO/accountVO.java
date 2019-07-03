@@ -5,9 +5,11 @@ public class accountVO {
 
 	private int no;
 	private String id;
+	private int enabled;
+	private String auth;
 	private String pass;
 	private String account_name;
-	private String type;
+	private String group_type;
 	
 	public int getNo() {
 		return no;
@@ -23,6 +25,22 @@ public class accountVO {
 	
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+
+	public int getEnabled(){
+		return enabled;
+	}
+	
+	public void setAuth(String auth) {
+		this.auth = auth;
+	}
+
+	public String getAuth(){
+		return auth;
 	}
 	
 	public String getPass() {
@@ -41,12 +59,12 @@ public class accountVO {
 		this.account_name = account_name;
 	}
 	
-	public String getType() {
-		return type;
+	public String getGroup_type() {
+		return group_type;
 	}
 	
-	public void setType(String type) {
-		this.type = type;
+	public void setGroup_type(String group_type) {
+		this.group_type = group_type;
 	}
 	
 }

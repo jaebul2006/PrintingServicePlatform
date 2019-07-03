@@ -6,8 +6,8 @@
 <mapper namespace="com.realdimension.Med3d.AccountMapper">
 	
 	<insert id="RegistAccount" parameterType="com.realdimension.Med3d.VO.accountVO">
-		INSERT INTO account (id, pass, account_name, type) 
-		VALUES (#{id}, #{pass}, #{account_name}, #{type})
+		INSERT INTO account (id, pass, account_name, group_type) 
+		VALUES (#{id}, #{pass}, #{account_name}, #{group_type})
 	</insert>
 	
 	<select id="AccountCnt" resultType="int">
@@ -42,15 +42,38 @@
 		FROM
 			account
 		WHERE
-			type = 'producer'
+			group_type = 'producer'
 	</select>
 	
 	<select id="AccountType" resultType="String">
-		SELECT type
+		SELECT group_type
 		FROM
 			account
 		WHERE
 			id = #{id}
+	</select>
+	
+	<insert id="RegistPatient" parameterType="com.realdimension.Med3d.VO.patientVO">
+		INSERT INTO patient (account_id, id, name, birth, sex, age) 
+		VALUES (#{account_id}, #{id}, #{name}, #{birth}, #{sex}, #{age})
+	</insert>
+	
+	<insert id="InsHospital" parameterType="com.realdimension.Med3d.VO.hospitalVO">
+		INSERT INTO hospital (account_id, id, name, address) 
+		VALUES (#{account_id}, #{id}, #{name}, #{address})
+	</insert>
+	
+	<insert id="InsPersonal" parameterType="com.realdimension.Med3d.VO.personalVO">
+		INSERT INTO personal (account_id, id, name, age, sex) 
+		VALUES (#{account_id}, #{id}, #{name}, #{age}, #{sex})
+	</insert>
+	
+	<select id="getHospital" resultType="com.realdimension.Med3d.VO.hospitalVO">
+		SELECT *
+		FROM
+			hospital
+		WHERE
+			account_id = #{id}
 	</select>
 	
 </mapper>

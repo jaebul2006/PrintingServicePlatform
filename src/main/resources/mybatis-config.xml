@@ -5,5 +5,7 @@
 	
 <!--   -->
 <configuration>
-	
+	<typeAliases>
+		<typeAlias alias="UserBean" type="com.realdimension.Med3d.VO.accountVO" />
+	</typeAliases>
 </configuration>

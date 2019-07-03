@@ -12,5 +12,9 @@ public interface ProductOrderDAO {
 	public OrderVO FindOrder(String order_id) throws Exception;
 	public List<OrderVO> AllOrderList() throws Exception;
 	public void OrderMakeStart(HashMap map) throws Exception;
+	public void OrderMakingCancel(String order_id) throws Exception;
+	public void OrderMakingDelete(String order_id) throws Exception;
+	public void MakingDone(String order_id) throws Exception;
+	public void DeliveryStart(String order_id) throws Exception;
 	
 }

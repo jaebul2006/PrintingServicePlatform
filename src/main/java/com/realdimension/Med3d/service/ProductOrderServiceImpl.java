@@ -44,4 +44,28 @@ public class ProductOrderServiceImpl implements ProductOrderService{
 		dao.OrderMakeStart(map);
 	}
 	
+	@Override
+	public void OrderMakingCancel(String order_id) throws Exception
+	{
+		dao.OrderMakingCancel(order_id);
+	}
+	
+	@Override
+	public void OrderMakingDelete(String order_id) throws Exception
+	{
+		dao.OrderMakingDelete(order_id);
+	}
+	
+	@Override
+	public void MakingDone(String order_id) throws Exception
+	{
+		dao.MakingDone(order_id);
+	}
+	
+	@Override
+	public void DeliveryStart(String order_id) throws Exception
+	{
+		dao.DeliveryStart(order_id);
+	}
+	
 }

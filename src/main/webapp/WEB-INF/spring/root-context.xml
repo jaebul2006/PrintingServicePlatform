@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd	
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	<!-- 위에 링크 트랜잭션기능을위한 스키마설정 한줄과 aop 관련 2줄 -->
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
@@ -34,8 +38,34 @@
 	</bean>
 		
 	<bean id="uploadPath" class="java.lang.String">
-		<!--  <constructor-arg value="C:\\Users\\USER\\Documents\\workspace-sts-3.9.0.RELEASE\\CSP\\src\\main\\webapp\\WEB-INF\\assets" /> --> 
-		<constructor-arg value="/usr/local/tomcat8/webapps/Med3d/WEB-INF/assets" /> 
+		<constructor-arg value="D:\\SpringProjects\\Med3d\\src\\main\\webapp\\WEB-INF\\assets" /> 
+		<!--  <constructor-arg value="/usr/local/tomcat8/webapps/Med3d/WEB-INF/assets" /> -->
 	</bean>	
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="-1"></property>
+		<!--  <property name="maxInMemorySize" value="2000000000"></property> -->
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+	
+	<bean id="feedSuccessHandler" class="com.realdimension.Med3d.Utility.FeedSuccessHandler"></bean>	
+	  
+	<bean id="horseDetailInfoFilePath" class="java.lang.String">
+		<constructor-arg value="D:\\SpringProjects\\Med3d\\src\\main\\webapp\\resources\\horseRecord.xml" /> 
+	</bean>
+	
+	<!-- 트랜잭션 기능을 위한  -->
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<!--
+	<bean id="riderRecordFilePath" class="java.lang.String">
+		<constructor-arg value="D:\\SpringProjects\\Med3d\\src\\main\\webapp\\resources\\riderRecord.xml" /> 
+	</bean>
+	
+	<bean id="horseSectionSpeedFilePath" class="java.lang.String">
+		<constructor-arg value="D:\\SpringProjects\\Med3d\\src\\main\\webapp\\resources\\horseSectionSpeed.xml" /> 
+	</bean>
+	-->
+	
 	
 </beans>

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 	
+	/*
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	
@@ -62,7 +63,7 @@ public class HomeController {
 		return "ClinicInto";
 	}
 	
-	@RequestMapping(value = "/auth/ProductState", method=RequestMethod.GET)
+	@RequestMapping(value = "/ProductState", method=RequestMethod.GET)
 	public String ProductState() {
 		return "ProductState";
 	}
@@ -71,6 +72,6 @@ public class HomeController {
 	public String Login() {
 		return "Login";
 	}
-	
+	*/
 	
 }

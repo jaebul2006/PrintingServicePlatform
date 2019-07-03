@@ -19,7 +19,7 @@ public class CompanyProduct {
 	@Autowired
 	AccountService account_service;
 	
-	@RequestMapping(value = "/auth/ProductOrder", method=RequestMethod.GET) 
+	@RequestMapping(value = "/ProductOrder", method=RequestMethod.GET) 
 	public ModelAndView ProductOrder() throws Exception
 	{
 		// 제작자로 등록한 계정의 목록을 보내줘야한다

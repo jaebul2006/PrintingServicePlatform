@@ -403,8 +403,11 @@
         	if(sel_idx == 0){
         		type = 'hospital';
         	}
-        	else{
+        	else if{
         		type = 'producer';
+        	}
+        	else{
+        		type = 'personal';
         	}
         	
         	var param = {'id':id, 'pass':pass, 'account_name':account_name, 'type':type};

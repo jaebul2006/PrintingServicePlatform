@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.realdimension.Med3d.HorseMapper">
+	
+	<insert id="insertHorseRecord" parameterType="com.realdimension.Med3d.VO.horseRecordVO">
+		INSERT INTO horse_record (hrName, race_date, distance, record) 
+		VALUES (#{hrName}, #{race_date}, #{distance}, #{record})
+	</insert>
+	
+	<select id="HorseInfo" resultType="com.realdimension.Med3d.VO.horseRecordVO">
+		SELECT *
+		FROM
+			horse_record
+		WHERE 
+			hrName = #{hrName}	
+	</select>
+	
+	<insert id="insertRiderRecord" parameterType="com.realdimension.Med3d.VO.riderRecordVO">
+		INSERT INTO rider_record (jkName, jkNo, meet, ord1CntT, ord1CntY, ord2CntT, ord2CntY, qnlRateT, 
+			qnlRateY, rcCntT, rcCntY, winRateT, winRateY) 
+		VALUES (#{jkName}, #{jkNo}, #{meet}, #{ord1CntT}, #{ord1CntY}, #{ord2CntT}, #{ord2CntY}, #{qnlRateT}, 
+			#{qnlRateY}, #{rcCntT}, #{rcCntY}, #{winRateT}, #{winRateY})
+	</insert>
+	
+	<select id="RiderInfo" resultType="com.realdimension.Med3d.VO.riderRecordVO">
+		SELECT *
+		FROM
+			rider_record
+		WHERE 
+			jkName = #{jkName}	
+	</select>
+	
+	<insert id="insertSectionSpeed" parameterType="com.realdimension.Med3d.VO.sectionSpeedVO">
+		INSERT INTO section_speed (meet, hrName, hrNo, rcDate, rcNo, rcDist, chulNo, rcTime, FRcTimeS1f, SRcTimeS1f, ARcTimeS1f,
+			FRcTime_1c, SRcTime_1c, ARcTime_1c, FRcTime_2c, SRcTime_2c, ARcTime_2c, FRcTime_3c, SRcTime_3c, ARcTime_3c, 
+			FRcTime_4c, SRcTime_4c, ARcTime_4c, FRcTimeG3f, SRcTimeG3f, ARcTimeG3f, FRcTimeG1f, SRcTimeG1f, ARcTimeG1f)
+		VALUES (#{meet}, #{hrName}, #{hrNo}, #{rcDate}, #{rcNo}, #{rcDist}, #{chulNo}, #{rcTime}, #{FRcTimeS1f}, #{SRcTimeS1f}, #{ARcTimeS1f},
+			#{FRcTime_1c}, #{SRcTime_1c}, #{ARcTime_1c}, #{FRcTime_2c}, #{SRcTime_2c}, #{ARcTime_2c}, #{FRcTime_3c}, #{SRcTime_3c}, #{ARcTime_3c}, 
+			#{FRcTime_4c}, #{SRcTime_4c}, #{ARcTime_4c}, #{FRcTimeG3f}, #{SRcTimeG3f}, #{ARcTimeG3f}, #{FRcTimeG1f}, #{SRcTimeG1f}, #{ARcTimeG1f})
+	</insert>
+	
+	<select id="SectionSpeedInfo" resultType="com.realdimension.Med3d.VO.sectionSpeedVO">
+		SELECT *
+		FROM
+			section_speed
+		WHERE 
+			hrName = #{hrName}	
+	</select>
+	
+	<insert id="insertHorseNameNo" parameterType="com.realdimension.Med3d.VO.horseNameNoVO">
+		INSERT INTO horse_name_no (hrName, hrNo) 
+		VALUES (#{hrName}, #{hrNo})
+	</insert>
+	
+	<select id="HorseNo" resultType="String">
+		SELECT hrNo
+		FROM
+			horse_name_no
+		WHERE 
+			hrName = #{hrName}
+	</select>
+	
+</mapper>

@@ -48,4 +48,28 @@ public class ProductOrderDAOImpl implements ProductOrderDAO {
 		sqlSession.update(namespace + ".OrderMakeStart", map);
 	}
 	
+	@Override
+	public void OrderMakingCancel(String order_id) throws Exception
+	{
+		sqlSession.update(namespace + ".OrderMakingCancel", order_id);
+	}
+	
+	@Override
+	public void OrderMakingDelete(String order_id) throws Exception
+	{
+		sqlSession.update(namespace + ".OrderMakingDelete", order_id);
+	}
+	
+	@Override
+	public void MakingDone(String order_id) throws Exception
+	{
+		sqlSession.update(namespace + ".MakingDone", order_id);
+	}
+	
+	@Override
+	public void DeliveryStart(String order_id) throws Exception
+	{
+		sqlSession.update(namespace + ".DeliveryStart", order_id);
+	}
+	
 }

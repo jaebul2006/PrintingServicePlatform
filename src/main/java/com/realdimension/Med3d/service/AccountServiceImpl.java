@@ -3,7 +3,12 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.realdimension.Med3d.VO.accountVO;
+import com.realdimension.Med3d.VO.hospitalVO;
 import com.realdimension.Med3d.dao.AccountDAO;
+import com.realdimension.Med3d.VO.patientVO;
+import com.realdimension.Med3d.VO.personalVO;
+
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -40,6 +45,30 @@ public class AccountServiceImpl implements AccountService{
 	public String AccountType(String id) throws Exception
 	{
 		return dao.AccountType(id);
+	}
+	
+	@Override
+	public void RegistPatient(patientVO vo) throws Exception
+	{
+		dao.RegistPatient(vo);
+	}
+	
+	@Override
+	public void InsHospital(hospitalVO vo) throws Exception
+	{
+		dao.InsHospital(vo);
+	}
+	
+	@Override
+	public void InsPersonal(personalVO vo) throws Exception
+	{
+		dao.InsPersonal(vo);
+	}
+	
+	@Override
+	public hospitalVO getHospital(String id) throws Exception
+	{
+		return dao.getHospital(id);
 	}
 	
 }

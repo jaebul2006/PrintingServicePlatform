@@ -6,8 +6,8 @@
 <mapper namespace="com.realdimension.Med3d.ProductOrderMapper">
 
 	<insert id="Order" parameterType="com.realdimension.Med3d.VO.OrderVO">
-		INSERT INTO product_order (id, order_date, requester_id, comment, service_type, business_trip, body_type, result_type, work_time, start_time, work_state) 
-		VALUES (#{id}, #{order_date}, #{requester_id}, #{comment}, #{service_type}, #{business_trip}, #{body_type}, #{result_type}, #{work_time}, #{start_time}, #{work_state})
+		INSERT INTO product_order (id, order_date, requester_id, comment, service_type, business_trip, body_type, result_type, work_time, start_time, start_time_ms, work_state, is_delete) 
+		VALUES (#{id}, #{order_date}, #{requester_id}, #{comment}, #{service_type}, #{business_trip}, #{body_type}, #{result_type}, #{work_time}, #{start_time}, #{start_time_ms}, #{work_state}, 'false')
 	</insert>
 	
 	<select id="OrderList" parameterType="String" resultType="com.realdimension.Med3d.VO.OrderVO">
@@ -16,6 +16,8 @@
 			product_order
 		WHERE 
 			requester_id = #{requester_id}	
+		AND
+			is_delete = 'false'
 	</select>
 
 	<select id="OrderFind" parameterType="String" resultType="com.realdimension.Med3d.VO.OrderVO">
@@ -24,20 +26,56 @@
 			product_order
 		WHERE 
 			id = #{id}
+		AND
+			is_delete = 'false'
 	</select>
 	
 	<select id="AllOrderList" resultType="com.realdimension.Med3d.VO.OrderVO">
 		SELECT *
 		FROM
 			product_order
+		WHERE
+			is_delete = 'false'
 	</select>
 	
 	<update id="OrderMakeStart">
 		UPDATE product_order
 		SET
-			work_time=#{work_time}, start_time=#{start_time}, work_state=#{work_state} 
+			work_time=#{work_time}, start_time=#{start_time}, start_time_ms=#{start_time_ms}, work_state=#{work_state} 
 		WHERE
 			id = #{id}
+	</update>
+	
+	<update id="OrderMakingCancel">
+		UPDATE product_order
+		SET
+			work_time=0, start_time=null, start_time_ms=null, work_state='ready'
+		WHERE
+			id=#{order_id}
+	</update>
+	
+	<update id="OrderMakingDelete">
+		UPDATE product_order
+		SET
+			is_delete = 'true'
+		WHERE
+			id = #{order_id}
+	</update>
+	
+	<update id="MakingDone">
+		UPDATE product_order
+		SET
+			work_state='making_done'
+		WHERE
+			id=#{order_id}
+	</update>
+	
+	<update id="DeliveryStart">
+		UPDATE product_order
+		SET
+			work_time=0, start_time=null, start_time_ms=null, work_state='shipping'
+		WHERE
+			id=#{order_id}
 	</update>
 	
 </mapper>
